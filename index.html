@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>⚠️ Warning</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      color: white;
+      font-family: Arial;
+      text-align: center;
+    }
+
+    .box {
+      backdrop-filter: blur(10px);
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1 id="title">⚠️ DO NOT CLICK THIS BUTTON ⚠️</h1>
+  <p id="sub">Seriously… don’t do it 😑</p>
+  <button onclick="handleClick()">DON’T CLICK</button>
+</div>
+
+<audio id="clickSound" src="click.mp3"></audio>
+
+<script>
+let count = 0;
+
+function handleClick() {
+  document.getElementById("clickSound").play();
+  count++;
+
+  if(count === 1){
+    document.getElementById("title").innerText = "I told you not to click 😤";
+  }
+  else if(count === 2){
+    document.getElementById("title").innerText = "You really don’t listen huh? 😂";
+  }
+  else if(count === 3){
+    document.getElementById("title").innerText = "Okay fine… now you’ve unlocked something 👀";
+    setTimeout(() => {
+      window.location.href = "page2.html";
+    }, 1500);
+  }
+}
+</script>
+
+</body>
+</html>
