@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For You ❤️</title>
+<style>
+body{
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-family:Arial;
+  text-align:center;
+}
+h1{font-size:35px;}
+</style>
+</head>
+
+<body>
+
+<div>
+<h1 id="text"></h1>
+<button onclick="next()">Read more 💌</button>
+</div>
+
+<audio autoplay loop src="music.mp3"></audio>
+
+<script>
+let arr=[
+"I made this for you, Samarth ❤️",
+"You are really special to me 💫",
+"And I mean it..."
+];
+let i=0;
+function type(){
+  if(i<arr.length){
+    text.innerText=arr[i];
+    i++;
+    setTimeout(type,2000);
+  }
+}
+type();
+
+function next(){
+  location.href="hacker.html";
+}
+</script>
+
+</body>
+</html>
