@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>⚠️ Warning</title>
+<style>
+body {
+  background:black;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-family:Arial;
+  text-align:center;
+}
+h1{font-size:45px;}
+button{
+  padding:15px 30px;
+  font-size:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div>
+<h1 id="t">⚠️ DO NOT CLICK ⚠️</h1>
+<p style="font-size:20px;">Seriously 😑</p>
+<button onclick="go()">DON'T CLICK</button>
+</div>
+
+<audio id="click" src="click.mp3"></audio>
+
+<script>
+let c=0;
+function go(){
+  document.getElementById("click").play();
+  c++;
+  if(c==1) t.innerText="I told you 😤";
+  else if(c==2) t.innerText="You never listen 😂";
+  else if(c==3){
+    t.innerText="Now see what happens 👀";
+    setTimeout(()=>location.href="page2.html",1500);
+  }
+}
+</script>
+
+</body>
+</html>
