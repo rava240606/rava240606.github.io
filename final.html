@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday ❤️</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+  font-family:Arial;
+  text-align:center;
+  overflow:hidden;
+}
+
+h1{
+  font-size:42px;
+}
+
+p{
+  font-size:22px;
+}
+
+button{
+  margin-top:20px;
+  padding:12px 25px;
+  font-size:18px;
+  border:none;
+  border-radius:25px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+</style>
+</head>
+
+<body>
+
+<h1 id="name"></h1>
+
+<p>
+Okay jokes apart ❤️<br>
+You really mean a lot to me 💫<br>
+I just wanted to make you smile 😊<br><br>
+Happy Birthday 🎂✨
+</p>
+
+<button onclick="celebrate()">Tap to Celebrate 🎉</button>
+
+<!-- SOUND (optional) -->
+<audio id="boom" src="boom.mp3"></audio>
+
+<script>
+// 🎯 NAME TYPING
+let text="Happy Birthday Akshita 💖";
+let i=0;
+
+function type(){
+  if(i<text.length){
+    document.getElementById("name").innerHTML += text[i];
+    i++;
+    setTimeout(type,80);
+  }
+}
+type();
+
+// 💥 CONFETTI EXPLOSION
+function explodeConfetti(symbol="🎉") {
+  for (let i = 0; i < 120; i++) {
+    let el = document.createElement("div");
+    el.innerHTML = symbol;
+
+    el.style.position = "absolute";
+    el.style.left = "50%";
+    el.style.top = "50%";
+    el.style.fontSize = "20px";
+
+    document.body.appendChild(el);
+
+    let angle = Math.random() * 2 * Math.PI;
+    let distance = Math.random() * 400;
+
+    let x = Math.cos(angle) * distance;
+    let y = Math.sin(angle) * distance;
+
+    el.animate([
+      { transform: "translate(0,0)", opacity: 1 },
+      { transform: `translate(${x}px, ${y}px)`, opacity: 0 }
+    ], {
+      duration: 2000,
+      easing: "ease-out"
+    });
+
+    setTimeout(() => el.remove(), 2000);
+  }
+}
+
+// 🎆 FIREWORK EFFECT (multi bursts)
+function fireworks() {
+  explodeConfetti("🎉");
+  setTimeout(()=>explodeConfetti("❤️"),500);
+  setTimeout(()=>explodeConfetti("✨"),1000);
+}
+
+// 🎉 BUTTON CLICK
+function celebrate(){
+  document.getElementById("boom").play(); // sound
+  fireworks();
+}
+
+// 🎁 AUTO CELEBRATION ON LOAD
+window.onload = () => {
+  fireworks();
+  setTimeout(()=>{
+    alert("You are really special ❤️");
+  },1500);
+};
+</script>
+
+</body>
+  </html>
