@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hacked 💻</title>
+<style>
+body{
+  background:black;
+  color:#00ff00;
+  font-family:monospace;
+  font-size:22px;
+  padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="hack"></div>
+
+<audio autoplay src="hack.mp3"></audio>
+
+<script>
+let lines=[
+"Accessing device...",
+"Bypassing password 🔓",
+"Stealing secrets 😈",
+"Uploading your personal data😏",
+"Wait... just kidding 🤣",
+"It's me Akshita 😌"
+];
+let i=0;
+
+function run(){
+  if(i<lines.length){
+    hack.innerHTML+=lines[i]+"<br>";
+    i++;
+    setTimeout(run,1000);
+  }else{
+    setTimeout(()=>location.href="page3.html",1500);
+  }
+}
+run();
+</script>
+
+</body>
+</html>
