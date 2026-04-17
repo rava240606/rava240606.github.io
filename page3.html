@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Catch me 😏</title>
+<style>
+body{
+  background:#111;
+  color:white;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Arial;
+}
+h1{font-size:30px;}
+button{
+  position:absolute;
+  padding:12px 25px;
+  font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Catch the button 😂</h1>
+<button id="b">Click me</button>
+
+<script>
+let b=document.getElementById("b");
+
+b.onmouseover=function(){
+  b.style.left=Math.random()*90+"%";
+  b.style.top=Math.random()*90+"%";
+}
+
+b.onclick=function(){
+  location.href="page4.html";
+}
+</script>
+
+</body>
+</html>
